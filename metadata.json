@@ -1,0 +1,7 @@
+{
+  "name": "SoffAI",
+  "description": "An AI-powered application to assist with generating presentations, research papers, theses, articles, and independent work. Features a creative, modern interface with dynamic backgrounds and an interactive prompt.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
