@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CancelIcon, GoogleIcon, FacebookIcon, TelegramIcon } from './icons';
+import { CancelIcon,  TelegramIcon } from './icons';
 
 interface AuthModalProps {
     onClose: () => void;
@@ -8,8 +8,7 @@ interface AuthModalProps {
 
 const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
     const socialButtons = [
-        { name: 'Google', icon: <GoogleIcon />, color: 'hover:bg-gray-700' },
-        { name: 'Facebook', icon: <FacebookIcon className="text-[#1877F2]" />, color: 'hover:bg-gray-700' },
+     
         { name: 'Telegram', icon: <TelegramIcon className="text-[#2AABEE]" />, color: 'hover:bg-gray-700' },
     ];
 
@@ -24,18 +23,20 @@ const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
                     <p className="text-gray-400 mb-6">SoffAI-ga xush kelibsiz!</p>
                 </div>
 
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 justify-center mb-6">
                     {socialButtons.map((btn) => (
-                        <button key={btn.name} className={`w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-gray-800/60 border border-gray-700 ${btn.color} transition-colors`}>
-                            {btn.icon}
+                        <button key={btn.name} className={` flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-gray-800/60 border border-gray-700 ${btn.color} transition-colors`}>
+                            <i>
+                                <img src="./img/telegram.png" width={25} height={25} alt="" />
+                            </i>
                             <span className="font-semibold text-sm">{btn.name} orqali davom etish</span>
                         </button>
                     ))}
                 </div>
 
-                <div className="flex items-center my-6">
+                <div className="flex items-center ">
                     <hr className="flex-grow border-gray-700" />
-                    <span className="mx-4 text-xs text-gray-500">YOKI</span>
+                    <span className="mx-4 text-lg text-gray-500">YOKI</span>
                     <hr className="flex-grow border-gray-700" />
                 </div>
 

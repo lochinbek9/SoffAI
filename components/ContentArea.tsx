@@ -271,19 +271,9 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeSection, generatedOutpu
                 </div>
             </div>
 
-{/* ---------------------------------------------------------- */}
-        
-  {/* Liquid glass qatlam */}
-  <div className="absolute inset-0 bg-black/10 backdrop-blur-sm rounded-3xl border border-white/20 shadow-[0_0_40px_rgba(255,255,255,0.1)]">
-  
-  </div>
+            <div className="absolute inset-0 bg-black/10 backdrop-blur-sm rounded-3xl border border-white/20 shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+            </div>
 
-
- 
-
-
-            
- {/* ---------------------------------------------------------- */}
             <div className="absolute inset-0 z-0 overflow-hidden">
                 <video
                     key={videoSrc} src={videoSrc} autoPlay loop muted playsInline
