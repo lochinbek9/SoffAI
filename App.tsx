@@ -8,12 +8,46 @@ import Slider from './components/Slider';
 import { runGeneration } from './services/geminiService';
 import { SECTION_FILTERS } from './constants';
 import { GoogleGenAI } from '@google/genai';
+import type { MetaData } from 'next';
 
 export type GeneratedOutput = {
     type: 'text' | 'audio' | 'video';
     content: string;
     sources?: any[];
 } | null;
+
+export const metaData:MetaData = {
+    title: "",
+    image: "./img/logo.jpeg",
+    description: "Soffia AI bilan sun'iy intellekt yordamida tez va oson prezentatsiyalar yarating. Matn, audio va video generatsiyasi uchun ilg'or AI texnologiyasidan foydalaning.",
+    author:"https://soffia.uz",
+    keywords: [
+             "prezentatsiya yaratish",
+             "Soffia AI",
+             "sun’iy intellekt prezentatsiya",
+             "AI prezentatsiya generator",
+             "avtomatik slayd tayyorlash",
+             "taqdimot tayyorlash",
+             "powerpoint yaratish",
+             "tez prezentatsiya",
+             "raqamli taqdimot",
+             "Soff uz"
+    ],
+    openGraph: {
+        siteName: 'Soffia AI',
+        url: 'https://soffia.uz',
+            title: "Sun'iy Intellekt Orqali Prezentatsiya yaratish - Soffia AI",
+    image: "./img/logo.jpeg",
+    description: "Soffia AI bilan sun'iy intellekt yordamida tez va oson prezentatsiyalar yarating. Matn, audio va video generatsiyasi uchun ilg'or AI texnologiyasidan foydalaning.",
+    },
+    twitter: {
+        card: 'summary_large_image',
+            title: "Sun'iy Intellekt Orqali Prezentatsiya yaratish - Soffia AI",
+    image: "./img/logo.jpeg",
+    description: "Soffia AI bilan sun'iy intellekt yordamida tez va oson prezentatsiyalar yarating. Matn, audio va video generatsiyasi uchun ilg'or AI texnologiyasidan foydalaning.",
+    
+    }
+}
 
 const App: React.FC = () => {
     const [activeSection, setActiveSection] = useState<Section>(Section.Presentation);

@@ -189,13 +189,13 @@ const PromptInput: React.FC<PromptInputProps> = ({
                     <button
                         onClick={onGenerate}
                         disabled={isLoading || (!prompt && uploadedFiles.length === 0)}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-[#87e64b] rounded-full flex items-center justify-center text-black hover:bg-opacity-90 disabled:bg-gray-500 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#87e64b] rounded-full flex items-center justify-center text-black hover:bg-opacity-90 disabled:bg-gray-500 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105"
                         aria-label="Generate Content"
                     >
                         {isLoading ? (
-                             <div className="w-8 h-8 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
+                             <div className="w-6 h-6 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
                         ) : (
-                           <UpIcon/>
+                           <UpIcon className="w-8 h-8"/>
                         )}
                     </button>
                 </div>
