@@ -19,7 +19,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
                     <CancelIcon className="w-6 h-6" />
                 </button>
                 <div className="text-center">
-                    <h2 className="text-2xl font-bold mb-2">Kirish yoki Ro'yxatdan o'tish</h2>
+                    <h2 className="text-2xl font-bold mb-2">Kirish </h2>
                     <p className="text-gray-400 mb-6">SoffAI-ga xush kelibsiz!</p>
                 </div>
 
@@ -34,13 +34,13 @@ const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
                     ))}
                 </div>
 
-                <div className="flex items-center ">
+                {/* <div className="flex items-center ">
                     <hr className="flex-grow border-gray-700" />
                     <span className="mx-4 text-lg text-gray-500">YOKI</span>
                     <hr className="flex-grow border-gray-700" />
-                </div>
+                </div> */}
 
-                <div className="flex flex-col gap-4">
+                {/* <div className="flex flex-col gap-4">
                     <input
                         type="tel"
                         placeholder="Telefon raqamingiz"
@@ -49,7 +49,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
                     <button className="w-full bg-[#87e64b] text-black font-bold py-3 rounded-lg hover:bg-opacity-90 transition-colors">
                         Davom etish
                     </button>
-                </div>
+                </div> */}
             </div>
         </div>
     );
