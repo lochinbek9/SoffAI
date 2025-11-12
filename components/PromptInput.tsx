@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Section, UploadedFile, FilterOptions } from '../types';
 import { PLACEHOLDERS } from '../constants';
-import { SparklesIcon, MicrophoneIcon, PaperclipIcon, CancelIcon } from './icons';
+import { SparklesIcon, UpIcon, MicrophoneIcon, PaperclipIcon, CancelIcon } from './icons';
 import SectionFilters from './SectionFilters';
 
 interface PromptInputProps {
@@ -167,15 +167,15 @@ const PromptInput: React.FC<PromptInputProps> = ({
                                 onGenerate();
                             }
                         }}
-                        className="w-full bg-white/5 border border-white/10 text-white rounded-xl p-5 pl-28 pr-24 resize-none focus:ring-2 focus:ring-[#87e64b] focus:outline-none backdrop-blur-lg transition-all duration-300 text-lg h-[150px]"
+                        className="w-full bg-white/5 border border-white/10 text-white rounded-xl p-5 pl-18 pr-14 resize-none focus:ring-2 focus:ring-[#87e64b] focus:outline-none backdrop-blur-lg transition-all duration-300 text-2xl h-[150px]"
                         placeholder=""
                     />
                     {!prompt && !isRecording && uploadedFiles.length === 0 && (
-                        <div className="absolute top-5 left-28 pointer-events-none text-lg">
+                        <div className="absolute top-5 pointer-events-none text-2xl" style={{ left: '22px' }}>
                             <TypingEffect placeholders={placeholders} />
                         </div>
                     )}
-                    <div className="absolute left-4 top-5 flex items-center gap-2">
+                    {/* <div className="absolute left-4 top-5 flex items-center gap-2">
                         <button onClick={handleMicClick} className={`p-2 rounded-full transition-colors ${isRecording ? 'bg-red-500/50 text-white' : 'hover:bg-gray-700/50'}`}>
                             {isRecording ? <div className="w-8 h-8 rounded-full bg-red-500 animate-pulse"></div> : <MicrophoneIcon className="w-8 h-8" />}
                         </button>
@@ -185,7 +185,7 @@ const PromptInput: React.FC<PromptInputProps> = ({
                             </button>
                         )}
                         <input type="file" ref={fileInputRef} onChange={handleFileChange} accept="image/*" multiple hidden />
-                    </div>
+                    </div> */}
                     <button
                         onClick={onGenerate}
                         disabled={isLoading || (!prompt && uploadedFiles.length === 0)}
@@ -195,7 +195,7 @@ const PromptInput: React.FC<PromptInputProps> = ({
                         {isLoading ? (
                              <div className="w-8 h-8 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
                         ) : (
-                            <SparklesIcon className="w-8 h-8" />
+                           <UpIcon/>
                         )}
                     </button>
                 </div>

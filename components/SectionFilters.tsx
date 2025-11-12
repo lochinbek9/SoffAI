@@ -26,11 +26,11 @@ const SectionFilters: React.FC<SectionFiltersProps> = ({ activeSection, options,
         <div className="bg-gray-900/50 border border-gray-700 backdrop-blur-sm rounded-xl p-3 flex flex-wrap items-center gap-x-6 gap-y-3">
             {filters.map((filter) => (
                 <div key={filter.id} className="flex items-center gap-3 text-sm">
-                     <div className="text-gray-400">{filter.icon}</div>
-                     <label className="font-medium text-gray-300">{filter.label}:</label>
+                    <div className="text-gray-400">{filter.icon}</div>
+                    <label className="font-medium text-gray-300">{filter.label}:</label>
                     {filter.type === 'slider' && (
                         <div className="flex items-center gap-2">
-                             <input
+                            <input
                                 type="range"
                                 min={filter.min}
                                 max={filter.max}
@@ -41,6 +41,11 @@ const SectionFilters: React.FC<SectionFiltersProps> = ({ activeSection, options,
                             <span className="text-white font-mono bg-gray-700/50 rounded-md px-2 py-0.5 text-xs">
                                 {options[filter.id] || filter.defaultValue}
                             </span>
+                            <input
+                                type="text"
+                                placeholder="Ismingizni kiriting..."
+                                className="w-full px-4 py-2 text-white placeholder-gray-300 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl outline-none focus:border-white/40 focus:ring-2 focus:ring-white/40 transition-all duration-300"
+                            />
                         </div>
                     )}
                     {filter.type === 'buttons' && (
@@ -49,11 +54,10 @@ const SectionFilters: React.FC<SectionFiltersProps> = ({ activeSection, options,
                                 <button
                                     key={opt}
                                     onClick={() => handleOptionChange(filter.id, opt)}
-                                    className={`px-3 py-1 text-xs rounded-md transition-colors duration-200 ${
-                                        options[filter.id] === opt
+                                    className={`px-3 py-1 text-xs rounded-md transition-colors duration-200 ${options[filter.id] === opt
                                             ? 'bg-[#87e64b] text-black font-bold'
                                             : 'bg-transparent text-gray-300 hover:bg-gray-700'
-                                    }`}
+                                        }`}
                                 >
                                     {opt}
                                 </button>

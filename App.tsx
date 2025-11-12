@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import PromptInput from './components/PromptInput';
 import ContentArea from './components/ContentArea';
 import AuthModal from './components/AuthModal';
+import Slider from './components/Slider';
 import { runGeneration } from './services/geminiService';
 import { SECTION_FILTERS } from './constants';
 import { GoogleGenAI } from '@google/genai';

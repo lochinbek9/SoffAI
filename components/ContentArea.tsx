@@ -3,6 +3,7 @@ import { Section } from '../types';
 import { GeneratedOutput } from '../App';
 import { BACKGROUND_VIDEOS, INTRO_MESSAGES } from '../constants';
 import { DownloadIcon, EditIcon, SaveIcon, CancelIcon, ClipboardIcon, LinkIcon, PlayIcon } from './icons';
+import './Slider.css'
 
 // --- Audio Utility Functions ---
 // Base64 decoder
@@ -94,7 +95,7 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeSection, generatedOutpu
         }, 500);
         return () => clearTimeout(timer);
     }, [activeSection]);
-    
+
     useEffect(() => {
         if (generatedOutput?.type === 'text') {
             setEditedContent(generatedOutput.content);
@@ -143,7 +144,7 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeSection, generatedOutpu
             setTimeout(() => setIsCopied(false), 2000);
         });
     };
-    
+
     const handlePlayAudio = async () => {
         if (generatedOutput?.type !== 'audio') return;
         const outputAudioContext = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
@@ -164,7 +165,7 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeSection, generatedOutpu
         setEditedContent(generatedOutput?.type === 'text' ? generatedOutput.content : '');
         setIsEditing(false);
     };
-    
+
     const formatContent = (text: string) => ({
         __html: text
             .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-[#87e64b]">$1</strong>')
@@ -181,7 +182,7 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeSection, generatedOutpu
                 return <video src={generatedOutput.content} controls autoPlay className="w-full max-w-2xl rounded-lg" />;
             case 'audio':
                 return (
-                     <div className="flex flex-col items-center justify-center bg-black/60 backdrop-blur-md p-8 rounded-lg">
+                    <div className="flex flex-col items-center justify-center bg-black/60 backdrop-blur-md p-8 rounded-lg">
                         <h3 className="text-xl font-semibold mb-4">Audio Tayyor</h3>
                         <button onClick={handlePlayAudio} className="w-24 h-24 bg-[#87e64b] text-black rounded-full flex items-center justify-center hover:bg-opacity-90 transition-transform transform hover:scale-105">
                             <PlayIcon className="w-12 h-12" />
@@ -228,7 +229,7 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeSection, generatedOutpu
                         )}
                         {/* Grounding Sources */}
                         {generatedOutput.sources && generatedOutput.sources.length > 0 && (
-                             <div className="mt-6 border-t border-gray-700 pt-4">
+                            <div className="mt-6 border-t border-gray-700 pt-4">
                                 <h4 className="font-semibold mb-2">Manbalar:</h4>
                                 <ul className="space-y-2">
                                     {generatedOutput.sources.map((source, index) => (
@@ -248,15 +249,47 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeSection, generatedOutpu
                 return null;
         }
     };
-    
+
     return (
         <main className="flex-grow pt-40 pb-96 relative flex items-center justify-center">
+
+            <div className="decorative-elements">
+                <div className="circle circle1">
+                    <img src="./img/pdficon.png" alt="" />
+                </div>
+                <div className="circle circle2">
+                    <img src="https://www.svgrepo.com/show/525837/document-1.svg" alt="" className="bg-white rounded-full" />
+                </div>
+                <div className="circle circle3">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4468/4468641.png" alt="" />
+                </div>
+                <div className="circle circle4">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2913/2913964.png" alt="" width={150} height={150} />
+                </div>
+                <div className="circle circle5">
+                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/microsoft-powerpoint-icon.png" alt="" />
+                </div>
+            </div>
+
+{/* ---------------------------------------------------------- */}
+        
+  {/* Liquid glass qatlam */}
+  <div className="absolute inset-0 bg-black/10 backdrop-blur-sm rounded-3xl border border-white/20 shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+  
+  </div>
+
+
+ 
+
+
+            
+ {/* ---------------------------------------------------------- */}
             <div className="absolute inset-0 z-0 overflow-hidden">
                 <video
                     key={videoSrc} src={videoSrc} autoPlay loop muted playsInline
                     className={`w-full h-full object-cover transition-opacity duration-500 ${showVideo ? 'opacity-30' : 'opacity-0'}`}
                 />
-                <div className="absolute inset-0 bg-black/50"></div>
+                {/* <div className="absolute inset-0 bg-black/50"></div> */}
             </div>
 
             <div className="relative z-10 container mx-auto px-4 text-center w-full max-w-4xl h-full overflow-y-auto">
@@ -279,7 +312,7 @@ const ContentArea: React.FC<ContentAreaProps> = ({ activeSection, generatedOutpu
                         )}
                     </div>
                 )}
-                
+
                 {!isLoading && !generatedOutput && !error && (
                     <div className="flex flex-col items-center justify-center h-full">
                         <h2 className="text-4xl md:text-5xl font-bold mb-4">
