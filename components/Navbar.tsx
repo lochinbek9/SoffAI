@@ -40,7 +40,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection, onAuth
                         <div className="flex items-center gap-3 md:gap-6">
                             <div className="flex-shrink-0">
                                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold flex items-center cursor-pointer">
-                                   <img src="./img/logo.jpeg" width={70} height={70} alt="" />
+                                   <img src="./img/logo.jpeg" width={70} height={70} alt="" className="rounded-full" />
                                     <SparklesIcon className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-[#87e64b] ml-1 md:ml-2" />
                                 </h1>
                             </div>
@@ -64,8 +64,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection, onAuth
                                                         className={`w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200 ${activeSection === item.id
                                                             ? 'bg-[#87e64b] text-black'
                                                             : 'text-gray-300 hover:bg-gray-800/70 hover:text-white'
-                                                            }`}
-                                                    >
+                                                            }`}>
                                                         {item.icon}
                                                         <span>{item.label}</span>
                                                     </button>
