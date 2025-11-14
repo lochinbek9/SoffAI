@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Section } from '../types';
 import { NAV_ITEMS } from '../constants';
 import { SparklesIcon, UserIcon, ChevronDownIcon } from './icons';
+import logo from "../img/logo.jpeg"
 
 interface NavbarProps {
     activeSection: Section;
@@ -40,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection, onAuth
                         <div className="flex items-center gap-3 md:gap-6">
                             <div className="flex-shrink-0">
                                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold flex items-center cursor-pointer">
-                                   <img src="./img/logo.jpeg" width={70} height={70} alt="" className="rounded-full" />
+                                   <img src={logo} width={70} height={70} alt="" className="rounded-full" />
                                     <SparklesIcon className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-[#87e64b] ml-1 md:ml-2" />
                                 </h1>
                             </div>

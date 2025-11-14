@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { CancelIcon,  TelegramIcon } from './icons';
+import telegramIcon from "../img/telegram.png"
+
 
 interface AuthModalProps {
     onClose: () => void;
@@ -27,7 +29,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ onClose }) => {
                     {socialButtons.map((btn) => (
                         <button key={btn.name} className={` flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-gray-800/60 border border-gray-700 ${btn.color} transition-colors`}>
                             <i>
-                                <img src="./img/telegram.png" width={25} height={25} alt="" />
+                                <img src={telegramIcon} width={25} height={25} alt="" />
                             </i>
                             <span className="font-semibold text-sm">{btn.name} orqali davom etish</span>
                         </button>
